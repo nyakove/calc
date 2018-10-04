@@ -18,13 +18,16 @@
 	line-height: 100px;
 	margin-bottom: 5px;
 	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
-#result {
+/* #result {
 	height: 100px;
 	width: 310px;
 }
-
+ */
 input {
 	width: 100%;
 	height: 40px;
