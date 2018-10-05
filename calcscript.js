@@ -48,8 +48,26 @@ function del() {
 		return;
 	document.getElementsByTagName('input')[0].value = document.getElementsByTagName('input')[0].value.substring(0, document.getElementsByTagName('input')[0].value.length - 1)
 }
-//var buttons = document.getElementsByClassName('digit');
+//доделать обработку клавиатуры
+function getChar(event) {
+  if (event.which == null) { // IE
+    if (event.keyCode < 32) return null; // спец. символ
+    document.getElementsByTagName('input')[0].value += String.fromCharCode(event.keyCode);
+	return;
+  }
 
+  if (event.which != 0 && event.charCode != 0) { // все кроме IE
+    if (event.which < 32) return null; // спец. символ
+	document.getElementsByTagName('input')[0].value += String.fromCharCode(event.which); // остальные
+	return;
+
+  }
+
+  return null; // спец. символ
+}
+//
+document.addEventListener('keypress', function() {getChar(event)});
+document.addEventListener('keypress', contValue);
 document.addEventListener('DOMContentLoaded', contValue);
 document.getElementsByTagName('body')[0].addEventListener('click', contValue);
 document.getElementById('1').addEventListener('click', clickInput);
