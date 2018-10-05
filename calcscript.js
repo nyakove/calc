@@ -1,3 +1,7 @@
+function contValue() {
+	a = document.getElementsByTagName('input')[0].value;
+}
+
 function clickInput() {
 	if ('+-/*'.indexOf(this.innerHTML) > -1 && '+-/*'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
 		del();
@@ -23,13 +27,13 @@ function calculate() {
 	}
 	try {
 		value = eval(document.getElementsByTagName('input')[0].value);
-		if (isNaN(value) || value == Infinity) {
-			value = 'Error!';
-			document.getElementsByTagName('input')[0].style.backgroundColor = '#F08080';
-		}
 	}
 	catch(err){
 		alert(err);
+	}
+	if (isNaN(value) || value == Infinity) {
+		value = 'Error!';
+		document.getElementsByTagName('input')[0].style.backgroundColor = '#F08080';
 	}
 	document.getElementsByTagName('input')[0].value = value;
 }
@@ -46,6 +50,8 @@ function del() {
 }
 //var buttons = document.getElementsByClassName('digit');
 
+document.addEventListener('DOMContentLoaded', contValue);
+document.getElementsByTagName('body')[0].addEventListener('click', contValue);
 document.getElementById('1').addEventListener('click', clickInput);
 document.getElementById('2').addEventListener('click', clickInput);
 document.getElementById('3').addEventListener('click', clickInput);
