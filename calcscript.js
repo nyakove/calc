@@ -1,4 +1,7 @@
 function clickInput() {
+	if ('+-/*'.indexOf(this.innerHTML) > -1 && '+-/*'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
+		del();
+	}
 	document.getElementsByTagName('input')[0].value += this.innerHTML;
 }
 
