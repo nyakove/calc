@@ -3,10 +3,21 @@ function clickInput() {
 }
 
 function calculate() {
-	value = eval(document.getElementsByTagName('input')[0].value);
-	if (isNaN(value) || value == Infinity) {
-		value = 'Error!';
-		document.getElementsByTagName('input')[0].style.backgroundColor = '#F08080';
+	if (document.getElementsByTagName('input')[0].value == '') 
+		return;
+	if (document.getElementsByTagName('input')[0].value == 'Error!') {
+		clear();
+		return;
+	}
+	try {
+		value = eval(document.getElementsByTagName('input')[0].value);
+		if (isNaN(value) || value == Infinity) {
+			value = 'Error!';
+			document.getElementsByTagName('input')[0].style.backgroundColor = '#F08080';
+		}
+	}
+	catch(err){
+		alert(err);
 	}
 	document.getElementsByTagName('input')[0].value = value;
 }
