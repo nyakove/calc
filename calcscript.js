@@ -11,6 +11,10 @@ function clickInput() {
 }
 
 function calculate() {
+	if ('+-/*'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
+		del();
+		
+	}
 	if (document.getElementsByTagName('input')[0].value == '') 
 		return;
 	if (document.getElementsByTagName('input')[0].value == 'Error!') {
@@ -36,7 +40,8 @@ function clear() {
 }
 
 function del() {
-	if (document.getElementsByTagName('input')[0].value.length == 0) return false;
+	if (document.getElementsByTagName('input')[0].value.length == 0) 
+		return;
 	document.getElementsByTagName('input')[0].value = document.getElementsByTagName('input')[0].value.substring(0, document.getElementsByTagName('input')[0].value.length - 1)
 }
 //var buttons = document.getElementsByClassName('digit');

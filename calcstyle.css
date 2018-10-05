@@ -11,7 +11,7 @@
 	height: 100px;
 	width: 100px;
 	background-color: #FFFFE0;
-	font-size: 50;
+	font-size: 40;
 	font-family: "Segoe UI";
 	font-weight: 600;
 	text-align: center;
@@ -21,6 +21,10 @@
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+}
+
+.digit:active {
+		background-color: #EEE8AA;
 }
 
 /* #result {
