@@ -4,6 +4,9 @@ function clickInput() {
 	}
 	if (document.getElementsByTagName('input')[0].value == '' && '+-/*'.indexOf(this.innerHTML) > -1)
 		return;
+	if (document.getElementsByTagName('input')[0].value.length == 1 && document.getElementsByTagName('input')[0].value.slice(-1) == '0' && '123456789'.indexOf(this.innerHTML) > -1) {
+		del();
+	}
 	document.getElementsByTagName('input')[0].value += this.innerHTML;
 }
 
