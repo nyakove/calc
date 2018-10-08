@@ -15,7 +15,7 @@ function clickInput() {
 }
 
 function calculate() {
-	if ('+-/*'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
+	if ('+-/*='.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
 		del();
 		
 	}
@@ -49,7 +49,7 @@ function del() {
 	document.getElementsByTagName('input')[0].value = document.getElementsByTagName('input')[0].value.substring(0, document.getElementsByTagName('input')[0].value.length - 1)
 }
 //доделать обработку клавиатуры
-function getChar(event) {
+/* function getChar(event) {
   if (event.which == null) { // IE
     if (event.keyCode < 32) return null; // спец. символ
     document.getElementsByTagName('input')[0].value += String.fromCharCode(event.keyCode);
@@ -64,9 +64,15 @@ function getChar(event) {
   }
 
   return null; // спец. символ
-}
+} */
 
 function keyOps(event) {
+	if (event.key.length == 1 && /[0-9]/.test(event.key)) {
+		document.getElementsByTagName('input')[0].value += event.key;
+	}
+	if ('+-/*.=()'.indexOf(event.key) > -1) {
+				document.getElementsByTagName('input')[0].value += event.key;
+	}
 	if (event.key == 'Delete') {
 		clear();
 	}
@@ -75,14 +81,12 @@ function keyOps(event) {
 	}
 	if (event.key == 'Enter')
 		calculate();
-	if (event.key.length == 1 && /[a-z]/.test(event.key))
-		alert('NON DIGIT!')
 }
 
 //
 document.addEventListener('keydown', keyOps)
-document.addEventListener('keypress', getChar);
-document.addEventListener('keypress', contValue);
+//document.addEventListener('keypress', getChar); 
+//document.addEventListener('keypress', contValue); 
 //document.addEventListener('DOMContentLoaded', contValue);
 //document.getElementsByTagName('body')[0].addEventListener('click', contValue);
 document.getElementById('1').addEventListener('click', clickInput);
