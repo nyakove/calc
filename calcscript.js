@@ -6,10 +6,14 @@ function clickInput() {
 	if ('+-/*'.indexOf(this.innerHTML) > -1 && '+-/*'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
 		del();
 	}
-	if (document.getElementsByTagName('input')[0].value == '' && '+-/*'.indexOf(this.innerHTML) > -1)
+	if (document.getElementsByTagName('input')[0].value == '' && '+-/*'.indexOf(this.innerHTML) > -1) {
 		return;
+	}
 	if (document.getElementsByTagName('input')[0].value.length == 1 && document.getElementsByTagName('input')[0].value.slice(-1) == '0' && '123456789'.indexOf(this.innerHTML) > -1) {
 		del();
+	}
+	if (document.getElementsByTagName('input')[0].value == 'Error!') {
+		clear();
 	}
 	document.getElementsByTagName('input')[0].value += this.innerHTML;
 }
@@ -17,7 +21,6 @@ function clickInput() {
 function calculate() {
 	if ('+-/*='.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
 		del();
-		
 	}
 	if (document.getElementsByTagName('input')[0].value == '') 
 		return;
@@ -68,6 +71,8 @@ function del() {
 
 function keyOps(event) {
 	if (event.key.length == 1 && /[0-9]/.test(event.key)) {
+		if (document.getElementsByTagName('input')[0].value == 'Error!')
+			clear();
 		document.getElementsByTagName('input')[0].value += event.key;
 	}
 	if ('+-/*.=()'.indexOf(event.key) > -1) {
@@ -76,7 +81,10 @@ function keyOps(event) {
 		}
 		if ('+-/*=().'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
 			del();
-		}	
+		}
+		if (document.getElementsByTagName('input')[0].value == 'Error!') {
+			clear();
+		}
 		document.getElementsByTagName('input')[0].value += event.key;
 	}
 	if (event.key == 'Delete') {
