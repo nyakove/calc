@@ -34,7 +34,7 @@ function calculate() {
 	catch(err){
 		alert(err);
 	}
-	if (isNaN(value) || value == Infinity) {
+	if (isNaN(value) || value == Infinity || value == -Infinity) {
 		value = 'Error!';
 		document.getElementsByTagName('input')[0].style.backgroundColor = '#F08080';
 	}
@@ -114,6 +114,7 @@ document.getElementById('7').addEventListener('click', clickInput);
 document.getElementById('8').addEventListener('click', clickInput);
 document.getElementById('9').addEventListener('click', clickInput);
 document.getElementById('0').addEventListener('click', clickInput);
+document.getElementById('dot').addEventListener('click', clickInput);
 document.getElementById('plus').addEventListener('click', clickInput);
 document.getElementById('minus').addEventListener('click', clickInput);
 document.getElementById('divide').addEventListener('click', clickInput);
