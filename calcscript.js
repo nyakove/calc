@@ -70,6 +70,9 @@ function del() {
 } */
 
 function keyOps(event) {
+	if (event.key == '/') {
+		event.preventDefault();
+	}
 	if (event.key.length == 1 && /[0-9]/.test(event.key)) {
 		if (document.getElementsByTagName('input')[0].value == 'Error!')
 			clear();
