@@ -71,7 +71,13 @@ function keyOps(event) {
 		document.getElementsByTagName('input')[0].value += event.key;
 	}
 	if ('+-/*.=()'.indexOf(event.key) > -1) {
-				document.getElementsByTagName('input')[0].value += event.key;
+		if (document.getElementsByTagName('input')[0].value == '') {
+			return;	
+		}
+		if ('+-/*=().'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
+			del();
+		}	
+		document.getElementsByTagName('input')[0].value += event.key;
 	}
 	if (event.key == 'Delete') {
 		clear();
@@ -81,6 +87,7 @@ function keyOps(event) {
 	}
 	if (event.key == 'Enter')
 		calculate();
+	
 }
 
 //
