@@ -65,11 +65,26 @@ function getChar(event) {
 
   return null; // спец. символ
 }
+
+function keyOps(event) {
+	if (event.key == 'Delete') {
+		clear();
+	}
+	if (event.key == 'Backspace') {
+		del();
+	}
+	if (event.key == 'Enter')
+		calculate();
+	if (event.key.length == 1 && /[a-z]/.test(event.key))
+		alert('NON DIGIT!')
+}
+
 //
-document.addEventListener('keypress', function() {getChar(event)});
+document.addEventListener('keydown', keyOps)
+document.addEventListener('keypress', getChar);
 document.addEventListener('keypress', contValue);
-document.addEventListener('DOMContentLoaded', contValue);
-document.getElementsByTagName('body')[0].addEventListener('click', contValue);
+//document.addEventListener('DOMContentLoaded', contValue);
+//document.getElementsByTagName('body')[0].addEventListener('click', contValue);
 document.getElementById('1').addEventListener('click', clickInput);
 document.getElementById('2').addEventListener('click', clickInput);
 document.getElementById('3').addEventListener('click', clickInput);
