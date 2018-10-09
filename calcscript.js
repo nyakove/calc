@@ -1,6 +1,6 @@
-function contValue() {
+/* function contValue() {
 	a = document.getElementsByTagName('input')[0].value;
-}
+} */
 
 function clickInput() {
 	if ('+-/*'.indexOf(this.innerHTML) > -1 && '+-/*'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
@@ -57,23 +57,6 @@ function del() {
 		return;
 	document.getElementsByTagName('input')[0].value = document.getElementsByTagName('input')[0].value.substring(0, document.getElementsByTagName('input')[0].value.length - 1)
 }
-//доделать обработку клавиатуры
-/* function getChar(event) {
-  if (event.which == null) { // IE
-    if (event.keyCode < 32) return null; // спец. символ
-    document.getElementsByTagName('input')[0].value += String.fromCharCode(event.keyCode);
-	return;
-  }
-
-  if (event.which != 0 && event.charCode != 0) { // все кроме IE
-    if (event.which < 32) return null; // спец. символ
-	document.getElementsByTagName('input')[0].value += String.fromCharCode(event.which); // остальные
-	return;
-
-  }
-
-  return null; // спец. символ
-} */
 
 function keyOps(event) {
 	if (event.key == '/') {
@@ -109,10 +92,6 @@ function keyOps(event) {
 
 //
 document.addEventListener('keydown', keyOps)
-//document.addEventListener('keypress', getChar); 
-//document.addEventListener('keypress', contValue); 
-//document.addEventListener('DOMContentLoaded', contValue);
-//document.getElementsByTagName('body')[0].addEventListener('click', contValue);
 document.getElementById('1').addEventListener('click', clickInput);
 document.getElementById('2').addEventListener('click', clickInput);
 document.getElementById('3').addEventListener('click', clickInput);
