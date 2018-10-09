@@ -38,6 +38,12 @@ function calculate() {
 		value = 'Error!';
 		document.getElementsByTagName('input')[0].style.backgroundColor = '#F08080';
 	}
+	if (value.toString().indexOf('99999') > 0 && value.toString().indexOf('.')) {
+		value = value.toFixed(value.toString().indexOf('99999') - parseInt(value).toString().length - 1)
+	}
+	if (value.toString().indexOf('00000') > 0 && value.toString().indexOf('.')) {
+		value = value.toFixed(value.toString().indexOf('00000') - parseInt(value).toString().length - 1)
+	}
 	document.getElementsByTagName('input')[0].value = value;
 }
 
