@@ -1,5 +1,7 @@
 function clickInput() {
-	if ('+-/*'.indexOf(event.target.innerHTML) > -1 && '+-/*'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
+	if (/[div]/.test(event.target.innerHTML)) 
+		return;
+	if ('+-/*.'.indexOf(event.target.innerHTML) > -1 && '+-/*.'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
 		del();
 	}
 	if (document.getElementsByTagName('input')[0].value == '' && '+-/*.'.indexOf(event.target.innerHTML) > -1) {
@@ -101,10 +103,14 @@ function keyOff(event) {
  }
 
 function clickOn() {
+	if (/[div]/.test(event.target.innerHTML)) 
+		return;
 	event.target.style.backgroundColor = '#EEE8AA';
 }
 
 function clickOff() {
+	if (/[div]/.test(event.target.innerHTML)) 
+		return;
 	event.target.style.backgroundColor = '#FFFFE0';
 }
 
