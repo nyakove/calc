@@ -1,4 +1,4 @@
-function clickInput() {
+function clickInput(event) {
 	if (/[div]/.test(event.target.innerHTML)) 
 		return;
 	if ('+-/*.'.indexOf(event.target.innerHTML) > -1 && '+-/*.'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
@@ -102,13 +102,13 @@ function keyOff(event) {
 	}
  }
 
-function clickOn() {
+function clickOn(event) {
 	if (/[div]/.test(event.target.innerHTML)) 
 		return;
 	event.target.style.backgroundColor = '#EEE8AA';
 }
 
-function clickOff() {
+function clickOff(event) {
 	if (/[div]/.test(event.target.innerHTML)) 
 		return;
 	event.target.style.backgroundColor = '#FFFFE0';
