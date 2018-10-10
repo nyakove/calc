@@ -83,19 +83,18 @@ function keyOps(event) {
 	}
 	if (event.key == 'Enter')
 		calculate();
-	
 }
 
-function clickEmulation(event) {
-	if (/[0-9]/.test(event.key)) {
+function keyOn(event) {
+	if (/[0-9]/.test(event.key) && event.key.length == 1) {
 		document.getElementById(event.key).style.backgroundColor = '#EEE8AA';
 	}
 }
 
-function resetDigit(event) {
-		if (/[0-9]/.test(event.key) ) {
-			document.getElementById(event.key).style.backgroundColor = '#FFFFE0';
-		}
+function keyOff(event) {
+	if (/[0-9]/.test(event.key) && event.key.length == 1) {
+		document.getElementById(event.key).style.backgroundColor = '#FFFFE0';
+	}
  }
 
 function clickOn() {
@@ -126,8 +125,8 @@ document.getElementById('9').addEventListener('mousedown', clickOn);
 document.getElementById('9').addEventListener('mouseup', clickOff);
 document.getElementById('0').addEventListener('mousedown', clickOn);
 document.getElementById('0').addEventListener('mouseup', clickOff);
-document.addEventListener('keydown', clickEmulation);
-document.addEventListener('keyup', resetDigit);
+document.addEventListener('keydown', keyOn);
+document.addEventListener('keyup', keyOff);
 document.addEventListener('keydown', keyOps);
 document.getElementById('1').addEventListener('click', clickInput);
 document.getElementById('2').addEventListener('click', clickInput);
