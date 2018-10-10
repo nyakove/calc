@@ -90,8 +90,24 @@ function keyOps(event) {
 	
 }
 
-//
-document.addEventListener('keydown', keyOps)
+function clickEmulation(event) {
+	if (event.key == '1' || event.key == '2' || event.key == '3' ||  event.key == '4' ||  event.key == '5' ||  event.key == '6' ||  event.key == '7' ||  event.key == '8' ||  event.key == '9' || event.key == '0' ) {
+		document.getElementById(event.key).style.backgroundColor = '#EEE8AA';
+	}
+}
+
+function resetDigit() {
+		if (event.key == '1' || event.key == '2' || event.key == '3' ||  event.key == '4' ||  event.key == '5' ||  event.key == '6' ||  event.key == '7' ||  event.key == '8' ||  event.key == '9' || event.key == '0' ) {
+			document.getElementById(event.key).style.backgroundColor = '#FFFFE0';
+		}
+ }
+
+ 
+document.addEventListener('keydown', clickEmulation);
+document.addEventListener('mousedown', clickEmulation);
+document.addEventListener('keyup', resetDigit);
+document.addEventListener('mouseup', resetDigit);
+document.addEventListener('keydown', keyOps);
 document.getElementById('1').addEventListener('click', clickInput);
 document.getElementById('2').addEventListener('click', clickInput);
 document.getElementById('3').addEventListener('click', clickInput);

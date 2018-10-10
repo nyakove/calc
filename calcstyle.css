@@ -26,9 +26,13 @@
 	-ms-user-select: none;
 }
 
-.digit:active {
+/* .digit:active {
 		background-color: #EEE8AA;
 }
+
+.active {
+	background-color: #EEE8AA;
+} */
 
 input {
 	width: 100%;
