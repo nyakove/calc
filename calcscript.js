@@ -92,13 +92,40 @@ function clickEmulation(event) {
 	}
 }
 
-function resetDigit() {
+function resetDigit(event) {
 		if (/[0-9]/.test(event.key) ) {
 			document.getElementById(event.key).style.backgroundColor = '#FFFFE0';
 		}
  }
 
- 
+function clickOn() {
+	this.style.backgroundColor = '#EEE8AA';
+}
+
+function clickOff() {
+	this.style.backgroundColor = '#FFFFE0';
+}
+
+document.getElementById('1').addEventListener('mousedown', clickOn);
+document.getElementById('1').addEventListener('mouseup', clickOff);
+document.getElementById('2').addEventListener('mousedown', clickOn);
+document.getElementById('2').addEventListener('mouseup', clickOff);
+document.getElementById('3').addEventListener('mousedown', clickOn);
+document.getElementById('3').addEventListener('mouseup', clickOff);
+document.getElementById('4').addEventListener('mousedown', clickOn);
+document.getElementById('4').addEventListener('mouseup', clickOff);
+document.getElementById('5').addEventListener('mousedown', clickOn);
+document.getElementById('5').addEventListener('mouseup', clickOff);
+document.getElementById('6').addEventListener('mousedown', clickOn);
+document.getElementById('6').addEventListener('mouseup', clickOff);
+document.getElementById('7').addEventListener('mousedown', clickOn);
+document.getElementById('7').addEventListener('mouseup', clickOff);
+document.getElementById('8').addEventListener('mousedown', clickOn);
+document.getElementById('8').addEventListener('mouseup', clickOff);
+document.getElementById('9').addEventListener('mousedown', clickOn);
+document.getElementById('9').addEventListener('mouseup', clickOff);
+document.getElementById('0').addEventListener('mousedown', clickOn);
+document.getElementById('0').addEventListener('mouseup', clickOff);
 document.addEventListener('keydown', clickEmulation);
 document.addEventListener('keyup', resetDigit);
 document.addEventListener('keydown', keyOps);
