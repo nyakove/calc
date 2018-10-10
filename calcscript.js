@@ -91,13 +91,13 @@ function keyOps(event) {
 }
 
 function clickEmulation(event) {
-	if (event.key == '1' || event.key == '2' || event.key == '3' ||  event.key == '4' ||  event.key == '5' ||  event.key == '6' ||  event.key == '7' ||  event.key == '8' ||  event.key == '9' || event.key == '0' ) {
+	if (/[0-9]/.test(event.key)) {
 		document.getElementById(event.key).style.backgroundColor = '#EEE8AA';
 	}
 }
 
 function resetDigit() {
-		if (event.key == '1' || event.key == '2' || event.key == '3' ||  event.key == '4' ||  event.key == '5' ||  event.key == '6' ||  event.key == '7' ||  event.key == '8' ||  event.key == '9' || event.key == '0' ) {
+		if (/[0-9]/.test(event.key) ) {
 			document.getElementById(event.key).style.backgroundColor = '#FFFFE0';
 		}
  }
