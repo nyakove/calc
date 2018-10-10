@@ -1,7 +1,3 @@
-/* function contValue() {
-	a = document.getElementsByTagName('input')[0].value;
-} */
-
 function clickInput() {
 	if ('+-/*'.indexOf(this.innerHTML) > -1 && '+-/*'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
 		del();
@@ -104,9 +100,7 @@ function resetDigit() {
 
  
 document.addEventListener('keydown', clickEmulation);
-document.addEventListener('mousedown', clickEmulation);
 document.addEventListener('keyup', resetDigit);
-document.addEventListener('mouseup', resetDigit);
 document.addEventListener('keydown', keyOps);
 document.getElementById('1').addEventListener('click', clickInput);
 document.getElementById('2').addEventListener('click', clickInput);
