@@ -7,6 +7,8 @@
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+	border: 2px solid black;
+	padding: 10 10 10 10;
 }
 
 .digit {
@@ -24,6 +26,7 @@
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+
 }
 
 /* .digit:active {
