@@ -88,6 +88,18 @@ function keyOps(event) {
 	}
 	if (event.key == 'Enter')
 		calculate();
+	if (event.key == ',') {
+		if (document.getElementsByTagName('input')[0].value == '') {
+			return;	
+		}
+		if ('+-/*=().'.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
+			del();
+		}
+		if (document.getElementsByTagName('input')[0].value == 'Error!') {
+			clear();
+		}
+		document.getElementsByTagName('input')[0].value += '.';
+		}
 }
 
 function keyOn(event) {
