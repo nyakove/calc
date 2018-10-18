@@ -20,6 +20,10 @@ function clickInput(event) {
 }
 
 function calculate() {
+	if (document.getElementsByTagName('input')[0].value.substring(0,1) == '0') {
+		document.getElementsByTagName('input')[0].value = document.getElementsByTagName('input')[0].value.slice(1);
+		calculate();
+		}
 	if ('+-/*='.indexOf(document.getElementsByTagName('input')[0].value.slice(-1)) > -1) {
 		del();
 	}
