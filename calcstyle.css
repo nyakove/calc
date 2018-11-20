@@ -44,7 +44,7 @@ input {
     background-color: #B0E0E6;
     margin-bottom: 10px;
     text-align: right;
-    font-size: 30;
+    font-size: 30pt;
     font-family: "Segoe UI";
     font-weight: 600;
 }
@@ -63,10 +63,10 @@ input {
         display: flex;
         width: 100vw;
         height: 100vh;
-        border: 1px solid #D2691E;
+        border: none;
         transform: none;
         padding: 0;
-        position: auto;
+        position: inherit;
         top: auto;
         left: auto;
         flex-direction: column;
@@ -81,10 +81,11 @@ input {
     }
 
     input {
-        width: 96vw;
+        width: 94vw;
         height: 12vh;
         border: 1px solid #cbcbcb;
         font-size: 8vh;
+        padding: 0 1vw;
     }
 
     #keys {
@@ -103,17 +104,20 @@ input {
     #row6 {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         width: 100vw;
         margin: 0;
+        padding: 0 2vw;
     }
 
     .digit {
         display: block;
-        height: calc(80vh/6 - 4vw);
-        width: calc(100%/3 - 4vw);
+        height: calc(80vh/6 - 2vw);
+        width: calc(92vw / 3);
         line-height: inherit;
         font-size: calc(80vh / 10);
+        border: 1px solid #cbcbcb;
+        margin: 0;
     }
 }
