@@ -11,8 +11,27 @@
     padding: 10px;
 }
 
+#keys {
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+#row1,
+#row2,
+#row3,
+#row4,
+#row5,
+#row6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
 .digit {
-    display: inline-block;
     height: 100px;
     width: 100px;
     background-color: #FFFFE0;
@@ -20,8 +39,6 @@
     font-family: "Segoe UI";
     font-weight: 600;
     text-align: center;
-    line-height: 100px;
-    margin-bottom: 5px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -50,6 +67,10 @@ input {
 }
 
 @media screen and (orientation: portrait) {
+    html {
+        overflow-x: hidden;
+    }
+
     body {
         display: flex;
         flex-wrap: wrap;
@@ -57,6 +78,7 @@ input {
         align-items: center;
         width: 100vw;
         margin: 0;
+        overflow-x: hidden;
     }
 
     #container {
@@ -112,12 +134,14 @@ input {
     }
 
     .digit {
-        display: block;
+        display: inline-block;
         height: calc(80vh/6 - 2vw);
+        line-height: calc(80vh/6 - 2vw);
         width: calc(92vw / 3);
-        line-height: inherit;
         font-size: calc(80vh / 10);
         border: 1px solid #cbcbcb;
         margin: 0;
+        align-self: center;
+        vertical-align: middle;
     }
 }
