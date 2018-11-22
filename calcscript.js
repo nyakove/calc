@@ -129,6 +129,38 @@ function clickOff(event) {
     event.target.style.backgroundColor = '#FFFFE0';
 }
 
+function alert_() {
+    if (document.getElementsByTagName('input')[0].value.length >= 14) {
+        document.getElementsByTagName('input')[0].style.fontSize = '0.5em';
+        console.log('Limit max!')
+    } 
+    
+    else if (document.getElementsByTagName('input')[0].value.length >= 11) {
+        document.getElementsByTagName('input')[0].style.fontSize = '0.75em';
+        console.log('Limit min!');
+    }
+    
+    else {
+        document.getElementsByTagName('input')[0].style.fontSize = '1em';  
+    }
+}
+
+/*function foo_test () {
+    if (document.getElementsByTagName('input')[0].value > 11) {
+        document.getElementsByTagName('input')[0].style.fontSize = '6vh';
+        console.log('Limit first!')
+    } 
+    
+    else if (document.getElementsByTagName('input')[0].value > 16) {
+        document.getElementsByTagName('input')[0].style.fontSize = '6vh';
+        console.log('Limit second!');
+    }
+    
+    else {
+        document.getElementsByTagName('input')[0].style.fontSize = '8vh';  
+    }
+}*/
+
 document.getElementById('keys').addEventListener('click', clickInput);
 document.getElementById('keys').addEventListener('mousedown', clickOn);
 document.getElementById('keys').addEventListener('mouseup', clickOff);
@@ -138,3 +170,5 @@ document.addEventListener('keydown', keyOps);
 document.getElementById('result').addEventListener('click', calculate);
 document.getElementById('clear').addEventListener('click', clear);
 document.getElementById('del').addEventListener('click', del);
+document.getElementById('keys').addEventListener('click', alert_);
+document.addEventListener('keydown', alert_);

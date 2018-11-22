@@ -1,5 +1,5 @@
 #container {
-    width: 310px;
+    width: 340px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -9,6 +9,10 @@
     -ms-user-select: none;
     border: 2px solid #D2691E;
     padding: 10px;
+}
+
+#table {
+    font-size: 62px;
 }
 
 #keys {
@@ -57,11 +61,10 @@
 
 input {
     width: 100%;
-    height: 40px;
+    height: 10vh;
     background-color: #B0E0E6;
     margin-bottom: 10px;
     text-align: right;
-    font-size: 30pt;
     font-family: "Segoe UI";
     font-weight: 600;
     opacity: 1.0;
