@@ -64,6 +64,8 @@ input {
     font-size: 30pt;
     font-family: "Segoe UI";
     font-weight: 600;
+    opacity: 1.0;
+    color: #000;
 }
 
 @media screen and (orientation: portrait) {
