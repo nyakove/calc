@@ -101,7 +101,7 @@ input {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2vh 2vw 2vh 2vw;
+        padding: 2vh 2vw;
     }
 
     input {
