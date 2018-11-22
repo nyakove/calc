@@ -99,7 +99,7 @@ input {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 3vh 2vw;
+        padding: 2vh 2vw 2vh 2vw;
     }
 
     input {
@@ -108,13 +108,15 @@ input {
         border: 1px solid #cbcbcb;
         font-size: 8vh;
         padding: 0 1vw;
+        margin: 0;
     }
 
     #keys {
-        height: 80vh;
+        min-height: 82vh;
+        height: auto;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-evenly;
         flex-direction: column;
     }
 
@@ -134,7 +136,8 @@ input {
     }
 
     .digit {
-        display: inline-block;
+        display: flex;
+        justify-content: center;
         height: calc(80vh/6 - 2vw);
         line-height: calc(80vh/6 - 2vw);
         width: calc(92vw / 3);
@@ -143,5 +146,6 @@ input {
         margin: 0;
         align-self: center;
         vertical-align: middle;
+        color: #000;
     }
 }
